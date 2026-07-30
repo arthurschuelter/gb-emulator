@@ -10,6 +10,7 @@ Bus::Bus() {
     oam.fill(0x00);
 
     cartridge = std::make_shared<Cartridge>();
+    io = std::make_shared<IORegisters>();
 }
 
 uint8_t Bus::read(uint16_t addr) {
@@ -22,7 +23,7 @@ uint8_t Bus::read(uint16_t addr) {
         if (addr <= 0xFDFF) return read(addr - 0x2000);
         if (addr <= 0xFE9F) return oam[addr - 0xFE00];
         if (addr <= 0xFEFF) return 0xFF;
-        if (addr <= 0xFF7F) throw std::invalid_argument("IORegisters not implemented yet..."); // return ioRegisters->read(addr - 0xFF00)
+        if (addr <= 0xFF7F) return io->read(addr);
         if (addr <= 0xFFFE) return hram[addr - 0xFF80];
         if (addr == 0xFFFF) return interrupt_enable;
         

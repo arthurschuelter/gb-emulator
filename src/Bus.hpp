@@ -1,12 +1,10 @@
 #pragma once
 
 #include "Cartridge.hpp"
+#include "IORegisters.hpp"
 
 #include <array>
 #include <memory>
-
-// class Cartridge;
-class IORegisters;
 
 class Bus {
 public:
