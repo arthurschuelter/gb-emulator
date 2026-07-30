@@ -3,9 +3,9 @@ CXX := g++
 CXXFLAGS := -std=c++20
 
 # Target and Source Files
-TARGET := main
-SOURCES := src/main.cpp src/Bus.cpp
-HEADERS := src/Bus.hpp
+TARGET := ./bin/main
+SOURCES := src/main.cpp src/Bus.cpp src/Cartridge.cpp
+HEADERS := src/Bus.hpp src/Cartridge.hpp
 
 DEFAULT_GOAL := run
 
