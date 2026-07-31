@@ -1,0 +1,5 @@
+# Project specific folders
+roms/
+
+# Binaries
+bin/
