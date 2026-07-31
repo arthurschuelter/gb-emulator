@@ -1,7 +1,7 @@
 #include <fstream>
 #include <iostream>
 
-#include "Bus.hpp"
+#include "./core/memory/Bus.hpp"
 
 void BusCheck(Bus* bus) {
     // std::cout << "VRAM:\t" << bus->read(0x8000) << std::endl;
