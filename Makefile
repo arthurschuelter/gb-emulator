@@ -1,4 +1,4 @@
-DEFAULT_GOAL := run
+.DEFAULT_GOAL := run
 TARGET := build/gb-emu
 
 run: configure build
@@ -7,11 +7,11 @@ run: configure build
 
 compile: $(TARGET)
 
-configure:
-	cmake -S . -B build
+configure: 
+	cmake -S . -B build -DGBEMU_ENABLE_CLANG_TIDY=ON
 
-build:
-	cmake --build build/
+build: configure
+	cmake --build build 
 
 clean:
 	rm -rf build/
