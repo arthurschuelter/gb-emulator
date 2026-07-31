@@ -3,6 +3,7 @@ roms/*
 
 # Binaries
 bin/*
+build/*
 
 # Macbook
 .DS_STORE
