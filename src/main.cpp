@@ -11,8 +11,10 @@ void BusCheck(Bus* bus) {
     // std::cout << "Echo RAM:\t" << bus->read(0xE000) << std::endl;
     // std::cout << "Interrupt Enable:\t" << bus->read(0xFFFF) << std::endl;
     
-    std::cout << "Cartridge A:\t" << std::hex << bus->read(0x0000) << std::endl;
-    std::cout << "Cartridge B:\t" << bus->read(0x4000) << std::endl;
+    std::cout << "Cartridge A:\t" << std::showbase << std::hex 
+           << static_cast<int>(bus->read(0x0000)) << std::endl;
+    std::cout << "Cartridge B:\t" << std::showbase << std::hex 
+           << static_cast<int>(bus->read(0x4000)) << std::endl;
     // std::cout << "ERAM:\t" << bus->read(0xA000) << std::endl;
     // std::cout << "I/O Registers :\t" << bus->read(0xFF00) << std::endl;
     
@@ -35,7 +37,6 @@ int main(int argc, char* argv[]) {
         std::cout << "Failed to open file..." << std::endl;
         return 0;
     }
-    std::cout << "Peek: " << std::hex << file.peek() << std::endl;
 
     Cartridge* cartridge = new Cartridge(file);
     Bus* bus = new Bus(cartridge);

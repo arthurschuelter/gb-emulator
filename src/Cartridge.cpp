@@ -1,10 +1,13 @@
 #include "Cartridge.hpp"
 
+#include <iostream>
 #include <stdexcept>
 
 Cartridge::Cartridge(std::ifstream &file) {
     rom.fill(0x00);
     eram.fill(0x00);
+
+    std::cout << "Cartridge: " << std::showbase << std::hex << file.peek() <<  std::endl;
 
     _rom = std::vector<uint8_t>(
         std::istream_iterator<uint8_t>(file), 

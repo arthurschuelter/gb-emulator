@@ -1,5 +1,8 @@
 # Project specific folders
-roms/
+roms/*
 
 # Binaries
-bin/
+bin/*
+
+# Macbook
+.DS_STORE
