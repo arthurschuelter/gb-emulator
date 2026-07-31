@@ -1,7 +1,7 @@
 #include "CpuRegisters.hpp"
 
 CpuRegisters::CpuRegisters() {
-    std::cout << "Initializing CPU Registers" << std::endl;
+    std::cout << "Initializing CPU Registers\n";
 }
 
 

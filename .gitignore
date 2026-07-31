@@ -5,5 +5,8 @@ roms/*
 bin/*
 build/*
 
+# CMake
+.venv/
+
 # Macbook
 .DS_STORE

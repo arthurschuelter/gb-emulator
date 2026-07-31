@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.5)
 
 project(GBEmu)
 
-add_executable(gb-emu 
+add_executable(gb-emu
     src/main.cpp
 
     src/core/memory/Bus.cpp
@@ -16,5 +16,4 @@ add_executable(gb-emu
     src/core/cpu/Cpu.hpp
     src/core/cpu/CpuRegisters.cpp
     src/core/cpu/CpuRegisters.hpp
-
 )

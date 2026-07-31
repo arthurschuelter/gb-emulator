@@ -10,9 +10,13 @@ class Bus {
 public:
     Bus(Cartridge* _cartridge);
     ~Bus() = default;
+    Bus(Bus &obj);
 
     uint8_t read(uint16_t addr);
     void write(uint16_t addr, uint8_t value);
+
+    // Testing
+    void BusCheck();
 
 private:
     Cartridge* cartridge;               // 0000--3FFF
