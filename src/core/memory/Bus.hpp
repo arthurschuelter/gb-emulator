@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Cartridge.hpp"
-#include "IORegisters.hpp"
+#include "IoRegisters.hpp"
 
 #include <array>
 #include <memory>
@@ -24,7 +24,7 @@ private:
     std::array<uint8_t, 0x2000> wram;   // C000--DFFF
     std::array<uint8_t,   0xA0> oam;    // FE00--FE9F
 
-    std::shared_ptr<IORegisters> io;    // FF00--FF7F
+    std::shared_ptr<IoRegisters> io;    // FF00--FF7F
     std::array<uint8_t,   0x7F> hram;   // FF80--FFFE
     uint8_t interrupt_enable{0};        // FFFF--FFFF
 };

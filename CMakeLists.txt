@@ -9,6 +9,12 @@ add_executable(gb-emu
     src/core/memory/Bus.hpp
     src/core/memory/Cartridge.cpp
     src/core/memory/Cartridge.hpp
-    src/core/memory/IORegisters.cpp
-    src/core/memory/IORegisters.hpp
+    src/core/memory/IoRegisters.cpp
+    src/core/memory/IoRegisters.hpp
+
+    src/core/cpu/Cpu.cpp
+    src/core/cpu/Cpu.hpp
+    src/core/cpu/CpuRegisters.cpp
+    src/core/cpu/CpuRegisters.hpp
+
 )

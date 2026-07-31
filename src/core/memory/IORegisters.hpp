@@ -3,11 +3,11 @@
 #include <array>
 #include <memory>
 
-class IORegisters {
+class IoRegisters {
 
 public:
-    IORegisters();
-    ~IORegisters() = default;
+    IoRegisters();
+    ~IoRegisters() = default;
 
     uint8_t read(uint16_t addr);
 

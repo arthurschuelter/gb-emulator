@@ -10,7 +10,7 @@ Bus::Bus(Cartridge* _cartridge) {
     oam.fill(0x00);
 
     cartridge = _cartridge;
-    io = std::make_shared<IORegisters>();
+    io = std::make_shared<IoRegisters>();
 }
 
 uint8_t Bus::read(uint16_t addr) {

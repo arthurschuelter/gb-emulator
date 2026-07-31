@@ -2,6 +2,7 @@
 #include <iostream>
 
 #include "./core/memory/Bus.hpp"
+#include "./core/cpu/Cpu.hpp"
 
 void BusCheck(Bus* bus) {
     // std::cout << "VRAM:\t" << bus->read(0x8000) << std::endl;
@@ -38,9 +39,13 @@ int main(int argc, char* argv[]) {
         return 0;
     }
 
+    Cpu* cpu = new Cpu();
     Cartridge* cartridge = new Cartridge(file);
     Bus* bus = new Bus(cartridge);
     BusCheck(bus);
+
+
+    std::cout << (0xFF == 0x00FF) << std::endl; 
 
     file.close();
     return 0;
