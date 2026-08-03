@@ -49,11 +49,11 @@ void Bus::BusCheck() {
     std::cout << "Interrupt Enable:\t" << read(0xFFFF) << "\n";
     
     std::cout << "Cartridge A:\t" << std::showbase << std::hex 
-           << static_cast<int>(read(0x0000)) << "\n";
+        << static_cast<int>(read(0x0000)) << "\n";
     std::cout << "Cartridge B:\t" << std::showbase << std::hex 
-           << static_cast<int>(read(0x4000)) << "\n";
+        << static_cast<int>(read(0x4000)) << "\n";
     std::cout << "ERAM:\t" << read(0xA000) << "\n";
-    std::cout << "I/O Registers :\t" << read(0xFF00) << "\n";
+    std::cout << "I/O Registers:\t" << read(0xFF00) << "\n";
     
     std::cout << "Not Usable:\t" << static_cast<int>(read(0xFEA0)) << "\n";
 

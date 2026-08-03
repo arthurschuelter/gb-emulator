@@ -1,6 +1,7 @@
 #pragma once
 
 #include <iostream>
+#include <cstdint>
 
 class CpuRegisters {
 public:
@@ -15,6 +16,8 @@ public:
 
     uint16_t GetHL();
     void SetHL(uint16_t value);
+
+    void SetRegisters(uint16_t value, uint8_t &hi, uint8_t &lo);
 
 private:
     uint8_t a{0};
