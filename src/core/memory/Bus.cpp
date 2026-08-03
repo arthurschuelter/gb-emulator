@@ -12,7 +12,7 @@ Bus::Bus(Cartridge* _cartridge) : cartridge(_cartridge) {
 
     io = std::make_shared<IoRegisters>();
     
-    BusCheck();
+    // this->busCheck();
 }
 
 uint8_t Bus::read(uint16_t addr) {
@@ -37,10 +37,11 @@ uint8_t Bus::read(uint16_t addr) {
 }
 
 void Bus::write(uint16_t addr, uint8_t value) {
+    // TO DO
 
 }
 
-void Bus::BusCheck() {
+void Bus::busCheck() {
     std::cout << "VRAM:\t" << read(0x8000) << "\n";
     std::cout << "WRAM:\t" << read(0xC000) << "\n";
     std::cout << "HRAM:\t" << read(0xFF80) << "\n";

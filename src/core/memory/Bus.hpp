@@ -16,7 +16,7 @@ public:
     void write(uint16_t addr, uint8_t value);
 
     // Testing
-    void BusCheck();
+    void busCheck();
 
 private:
     Cartridge* cartridge;               // 0000--3FFF

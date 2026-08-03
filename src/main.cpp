@@ -21,13 +21,12 @@ int main(int argc, char* argv[]) {
         return 0;
     }
 
-    Cpu* cpu = new Cpu();
     Cartridge* cartridge = new Cartridge(file);
     Bus* bus = new Bus(cartridge);
-    // BusCheck(bus);
+    Cpu* cpu = new Cpu(bus);
 
+    cpu->powerUp();
 
-    std::cout << (0xFF == 0x00FF) << "\n"; 
 
     file.close();
     return 0;
