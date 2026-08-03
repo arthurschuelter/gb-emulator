@@ -17,7 +17,7 @@ public:
     uint16_t GetHL();
     void SetHL(uint16_t value);
 
-    void SetRegisters(uint16_t value, uint8_t &hi, uint8_t &lo);
+    void SetRegisters(uint16_t value, uint8_t &high, uint8_t &low);
 
 private:
     uint8_t a{0};

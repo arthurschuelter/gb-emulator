@@ -32,7 +32,7 @@ void CpuRegisters::SetHL(uint16_t value) {
     l = static_cast<uint8_t>(value & 0x00FF);
 }
 
-void CpuRegisters::SetRegisters(uint16_t value, uint8_t &hi, uint8_t &lo) {
-    hi = static_cast<uint8_t>(value >> 8);
-    lo = static_cast<uint8_t>(value & 0x00FF);
+void CpuRegisters::SetRegisters(uint16_t value, uint8_t &high, uint8_t &low) {
+    high = static_cast<uint8_t>(value >> 8);
+    low = static_cast<uint8_t>(value & 0x00FF);
 }

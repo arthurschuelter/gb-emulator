@@ -10,7 +10,11 @@ class Cpu {
 public:
     Cpu(Bus* bus);
     ~Cpu() = default;
-    Cpu(Cpu &obj);
+    Cpu(Cpu &obj) = default;
+    Cpu(Cpu &&obj) noexcept = default;
+
+    Cpu& operator=(Cpu &obj) = default;
+    Cpu& operator=(Cpu &&obj) noexcept = default;
 
     void powerUp();
 
