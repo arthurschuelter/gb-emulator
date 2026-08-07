@@ -8,7 +8,8 @@ run: configure build
 compile: $(TARGET)
 
 configure: 
-	cmake -S . -B build -DGBEMU_ENABLE_CLANG_TIDY=ON
+	cmake -S . -B build 
+# 	-DGBEMU_ENABLE_CLANG_TIDY=ON
 
 build: configure
 	cmake --build build 

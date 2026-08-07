@@ -1,6 +1,6 @@
 #include "CartridgeHeader.hpp"
 
-CartridgeHeader::CartridgeHeader(std::vector<uint8_t> &rom) {
+CartridgeHeader::CartridgeHeader(std::vector<u8> &rom) {
     std::copy(rom.begin() + 0x0104, rom.begin() + 0x0134, this->nintendo_logo.begin());
     std::copy(rom.begin() + 0x0134, rom.begin() + 0x0144, this->title.begin());
     std::copy(rom.begin() + 0x013F, rom.begin() + 0x0142, this->manufacturer_code.begin());
@@ -64,7 +64,7 @@ void CartridgeHeader::printHeaderInfo() {
 
 }
 
-std::string CartridgeHeader::getLicensee(uint8_t code, bool isNewLicensee) {
+std::string CartridgeHeader::getLicensee(u8 code, bool isNewLicensee) {
     if (isNewLicensee) {
         switch (code) {
             case 0x00: return "None";

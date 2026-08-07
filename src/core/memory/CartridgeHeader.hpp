@@ -1,5 +1,7 @@
 #pragma once
 
+#include "../../types.hpp"
+
 #include <array>
 #include <iostream>
 #include <string>
@@ -8,28 +10,28 @@
 
 class CartridgeHeader {
 public:
-    CartridgeHeader(std::vector<uint8_t> &rom);
+    CartridgeHeader(std::vector<u8> &rom);
     ~CartridgeHeader() = default;
 
     void printHeaderInfo();
 
 private:
-    std::array<uint8_t, 0x30> nintendo_logo;
-    std::array<uint8_t, 0x10> title;
-    std::array<uint8_t, 0x03> manufacturer_code;
-    uint8_t licensee_code;
+    std::array<u8, 0x30> nintendo_logo;
+    std::array<u8, 0x10> title;
+    std::array<u8, 0x03> manufacturer_code;
+    u8 licensee_code;
     std::string licensee_name;
 
-    uint8_t cgb_flag;
-    uint8_t sgb_flag;
-    uint8_t cartridge_type;
-    uint8_t rom_size;
-    uint8_t ram_size;
-    uint8_t destination_code;
-    uint8_t mask_rom_version_number;
+    u8 cgb_flag;
+    u8 sgb_flag;
+    u8 cartridge_type;
+    u8 rom_size;
+    u8 ram_size;
+    u8 destination_code;
+    u8 mask_rom_version_number;
 
-    uint8_t header_checksum;
-    uint16_t global_checksum;
+    u8 header_checksum;
+    u16 global_checksum;
 
-    std::string getLicensee(uint8_t code, bool isNewLicensee);
+    std::string getLicensee(u8 code, bool isNewLicensee);
 };

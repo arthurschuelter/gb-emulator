@@ -10,24 +10,24 @@ Cartridge::Cartridge(std::ifstream &file) {
     rom = loadRom(file);
 
     header = new CartridgeHeader(rom);
-    header->printHeaderInfo();
+    // header->printHeaderInfo();
 }
 
-uint8_t Cartridge::read(uint16_t addr) {
+u8 Cartridge::read(u16 addr) {
     if (addr >= 0xA000) {
         return eram[addr - 0xA000];
     }
     return rom[addr];
 }
 
-std::vector<uint8_t>& Cartridge::loadRom(std::ifstream &file) {
+std::vector<u8>& Cartridge::loadRom(std::ifstream &file) {
     file.seekg(0, std::ios::end);
     auto fileSize = file.tellg();
     file.seekg(0, std::ios::beg);
 
-    rom = std::vector<uint8_t>(fileSize);
+    rom = std::vector<u8>(fileSize);
 
-    for (uint16_t byte = 0; byte < fileSize; byte++) {
+    for (u16 byte = 0; byte < fileSize; byte++) {
         rom[byte] = file.get();
     }
 

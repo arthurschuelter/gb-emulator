@@ -8,6 +8,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_executable(gb-emu
     src/main.cpp
+    src/types.hpp
 
     src/core/memory/Bus.cpp
     src/core/memory/Bus.hpp

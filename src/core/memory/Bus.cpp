@@ -15,7 +15,7 @@ Bus::Bus(Cartridge* _cartridge) : cartridge(_cartridge) {
     // this->busCheck();
 }
 
-uint8_t Bus::read(uint16_t addr) {
+u8 Bus::read(u16 addr) {
     try {
         if (addr <= 0x7FFF) return cartridge->read(addr);
         if (addr <= 0x9FFF) return vram[addr - 0x8000];
@@ -36,7 +36,7 @@ uint8_t Bus::read(uint16_t addr) {
     return 0;
 }
 
-void Bus::write(uint16_t addr, uint8_t value) {
+void Bus::write(u16 addr, u8 value) {
     // TO DO
 
 }

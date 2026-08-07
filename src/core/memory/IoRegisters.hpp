@@ -1,5 +1,7 @@
 #pragma once
 
+#include "../../types.hpp"
+
 #include <array>
 #include <memory>
 
@@ -9,8 +11,8 @@ public:
     IoRegisters();
     ~IoRegisters() = default;
 
-    uint8_t read(uint16_t addr);
+    u8 read(u16 addr);
 
 private:
-    std::array<uint8_t, 0x80> data;
+    std::array<u8, 0x80> data;
 };

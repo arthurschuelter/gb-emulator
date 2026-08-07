@@ -1,5 +1,7 @@
 #pragma once
 
+# include "../../types.hpp"
+
 #include <iostream>
 #include <cstdint>
 
@@ -8,27 +10,23 @@ public:
     CpuRegisters();
     ~CpuRegisters() = default;
 
-    uint16_t GetBC();
-    void SetBC(uint16_t value);
+    u16 GetBC();
+    void SetBC(u16 value);
 
-    uint16_t GetDE();
-    void SetDE(uint16_t value);
+    u16 GetDE();
+    void SetDE(u16 value);
 
-    uint16_t GetHL();
-    void SetHL(uint16_t value);
+    u16 GetHL();
+    void SetHL(u16 value);
 
-    void SetRegisters(uint16_t value, uint8_t &high, uint8_t &low);
+    void SetRegisters(u16 value, u8 &high, u8 &low);
 
 private:
-    uint8_t a{0};
-    uint8_t b{0};
-    uint8_t c{0};
-    uint8_t d{0};
-    uint8_t e{0};
-    uint8_t f{0};
-    uint8_t h{0};
-    uint8_t l{0};
+    u8 a = 0, f = 0;
+    u8 b = 0, c = 0;
+    u8 d = 0, e = 0;
+    u8 h = 0, l = 0;
     
-    uint16_t sp{0};
-    uint16_t pc{0};
+    u16 sp = 0;
+    u16 pc = 0;
 };

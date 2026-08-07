@@ -5,34 +5,34 @@ CpuRegisters::CpuRegisters() {
 }
 
 
-uint16_t CpuRegisters::GetBC() {
-    return (static_cast<uint16_t>(b) << 8) | c;
+u16 CpuRegisters::GetBC() {
+    return (static_cast<u16>(b) << 8) | c;
 }
 
-void CpuRegisters::SetBC(uint16_t value) {
-    b = static_cast<uint8_t>(value >> 8);
-    c = static_cast<uint8_t>(value & 0x00FF);
+void CpuRegisters::SetBC(u16 value) {
+    b = static_cast<u8>(value >> 8);
+    c = static_cast<u8>(value & 0x00FF);
 }
 
-uint16_t CpuRegisters::GetDE() {
-    return (static_cast<uint16_t>(d) << 8) | e;
+u16 CpuRegisters::GetDE() {
+    return (static_cast<u16>(d) << 8) | e;
 }
 
-void CpuRegisters::SetDE(uint16_t value) {
-    d = static_cast<uint8_t>(value >> 8);
-    e = static_cast<uint8_t>(value & 0x00FF);
+void CpuRegisters::SetDE(u16 value) {
+    d = static_cast<u8>(value >> 8);
+    e = static_cast<u8>(value & 0x00FF);
 }
 
-uint16_t CpuRegisters::GetHL() {
-    return (static_cast<uint16_t>(h) << 8) | l;
+u16 CpuRegisters::GetHL() {
+    return (static_cast<u16>(h) << 8) | l;
 }
 
-void CpuRegisters::SetHL(uint16_t value) {
-    h = static_cast<uint8_t>(value >> 8);
-    l = static_cast<uint8_t>(value & 0x00FF);
+void CpuRegisters::SetHL(u16 value) {
+    h = static_cast<u8>(value >> 8);
+    l = static_cast<u8>(value & 0x00FF);
 }
 
-void CpuRegisters::SetRegisters(uint16_t value, uint8_t &high, uint8_t &low) {
-    high = static_cast<uint8_t>(value >> 8);
-    low = static_cast<uint8_t>(value & 0x00FF);
+void CpuRegisters::SetRegisters(u16 value, u8 &high, u8 &low) {
+    high = static_cast<u8>(value >> 8);
+    low = static_cast<u8>(value & 0x00FF);
 }

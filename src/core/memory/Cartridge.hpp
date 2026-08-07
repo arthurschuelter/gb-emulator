@@ -1,5 +1,6 @@
 #pragma once
 
+#include "../../types.hpp"
 #include "CartridgeHeader.hpp"
 
 #include <array>
@@ -13,12 +14,12 @@ public:
     Cartridge(std::ifstream &file);
     ~Cartridge() = default;
 
-    uint8_t read(uint16_t addr);
+    u8 read(u16 addr);
     
     private:
-    std::vector<uint8_t> rom;
-    std::array<uint8_t, 0x2000> eram;
+    std::vector<u8> rom;
+    std::array<u8, 0x2000> eram;
     CartridgeHeader* header;
     
-    std::vector<uint8_t>& loadRom(std::ifstream &file);
+    std::vector<u8>& loadRom(std::ifstream &file);
 };
