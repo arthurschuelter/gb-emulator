@@ -9,3 +9,7 @@ Cpu::Cpu(Bus* bus) : bus(bus) {
 void Cpu::powerUp() {
     std::cout << "Start!\n";
 }
+
+void Cpu::loop() {
+    
+}

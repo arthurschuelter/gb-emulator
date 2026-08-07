@@ -1,8 +1,10 @@
 #include <fstream>
 #include <iostream>
+#include <SFML/Graphics.hpp>
 
 #include "./core/memory/Bus.hpp"
 #include "./core/cpu/Cpu.hpp"
+#include "./frontend/window/Window.hpp"
 
 
 int main(int argc, char* argv[]) {
@@ -21,13 +23,15 @@ int main(int argc, char* argv[]) {
         return 0;
     }
 
+
     Cartridge* cartridge = new Cartridge(file);
+    file.close();
+    
     Bus* bus = new Bus(cartridge);
     Cpu* cpu = new Cpu(bus);
-
     cpu->powerUp();
+    
+    Window* window = new Window();
 
-
-    file.close();
     return 0;
 }

@@ -1,5 +1,4 @@
-cmake_minimum_required(VERSION 3.10)
-
+cmake_minimum_required(VERSION 3.15)
 project(GBEmu)
 
 # set(CMAKE_CXX_CLANG_TIDY clang-tidy)
@@ -23,4 +22,10 @@ add_executable(gb-emu
     src/core/cpu/Cpu.hpp
     src/core/cpu/CpuRegisters.cpp
     src/core/cpu/CpuRegisters.hpp
+
+    src/frontend/window/Window.cpp
+    src/frontend/window/Window.hpp
 )
+
+find_package(SFML 2.6.1 COMPONENTS graphics window system REQUIRED)
+target_link_libraries(gb-emu sfml-graphics sfml-window sfml-system)

@@ -17,6 +17,7 @@ public:
     Cpu& operator=(Cpu &&obj) noexcept = default;
 
     void powerUp();
+    void loop();
 
 private:
     std::shared_ptr<CpuRegisters> registers;
